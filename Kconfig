@@ -8,7 +8,6 @@ config ZEPHYR_OPENV2G_MODULE
 
 config OPENV2G
 	bool "OpenV2G support"
-	depends on CONFIG_NET_IPV6
 	help
 	  This option enables the OpenV2G library.
 
@@ -39,3 +38,4 @@ config OPENV2G_XMLDSIG
 	  Enable support for OpenV2G XML-DSIG
 
 endif # OPENV2G
+
