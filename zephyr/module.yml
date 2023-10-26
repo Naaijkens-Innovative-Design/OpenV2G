@@ -1,3 +1,4 @@
+name: openv2g
 build:
-    cmake: .
-    kconfig: Kconfig
+  cmake-ext: True
+  kconfig: Kconfig
