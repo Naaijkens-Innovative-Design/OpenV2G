@@ -1,0 +1,41 @@
+# OpenV2G stack configuration options
+
+# Copyright (c) 2023 Naaijkens ID B.V.
+# SPDX-License-Identifier: Apache-2.0
+
+config ZEPHYR_OPENV2G_MODULE
+	bool
+
+config OPENV2G
+	bool "OpenV2G support"
+	depends on CONFIG_NET_IPV6
+	help
+	  This option enables the OpenV2G library.
+
+if OPENV2G
+
+config OPENV2G_ISO1
+	bool "OpenV2G ISO1"
+	default y
+	help
+	  Enable support for OpenV2G ISO1
+
+config OPENV2G_ISO2
+	bool "OpenV2G ISO2"
+	default y
+	help
+	  Enable support for OpenV2G ISO2
+
+config OPENV2G_TP
+	bool "OpenV2G TP"
+	default y
+	help
+	  Enable support for OpenV2G V2GTP
+
+config OPENV2G_XMLDSIG
+	bool "OpenV2G TP"
+	default y
+	help
+	  Enable support for OpenV2G XML-DSIG
+
+endif # OPENV2G

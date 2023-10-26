@@ -1,0 +1,47 @@
+# SPDX-License-Identifier: Apache-2.0
+
+if(CONFIG_OPENV2G)
+
+  set(OPENV2G_DIR ${ZEPHYR_CURRENT_MODULE_DIR}/src)
+
+  zephyr_library()
+
+  zephyr_include_directories(
+    ${OPENV2G_DIR}/appHandshake
+    ${OPENV2G_DIR}/codec
+    ${OPENV2G_DIR}/din
+    ${OPENV2G_DIR}/iso1
+    ${OPENV2G_DIR}/iso2
+    ${OPENV2G_DIR}/transport
+    ${OPENV2G_DIR}/xmldsig
+  )
+
+  zephyr_library_sources(
+    ${OPENV2G_DIR}/appHandshake/appHandEXIDatatypes.c
+    ${OPENV2G_DIR}/appHandshake/appHandEXIDatatypesDecoder.c
+    ${OPENV2G_DIR}/appHandshake/appHandEXIDatatypesEncoder.c
+    ${OPENV2G_DIR}/codec/BitInputStream.c
+    ${OPENV2G_DIR}/codec/BitOutputStream.c
+    ${OPENV2G_DIR}/codec/ByteStream.c
+    ${OPENV2G_DIR}/codec/DecoderChannel.c
+    ${OPENV2G_DIR}/codec/EncoderChannel.c
+    ${OPENV2G_DIR}/codec/EXIHeaderDecoder.c
+    ${OPENV2G_DIR}/codec/EXIHeaderEncoder.c
+    ${OPENV2G_DIR}/codec/MethodsBag.c
+    ${OPENV2G_DIR}/din/dinEXIDatatypes.c
+    ${OPENV2G_DIR}/din/dinEXIDatatypesDecoder.c
+    ${OPENV2G_DIR}/din/dinEXIDatatypesEncoder.c
+  )
+
+  zephyr_library_sources_ifdef(OPENV2G_ISO1 ${OPENV2G_DIR}/iso1/iso1EXIDatatypes.c)
+  zephyr_library_sources_ifdef(OPENV2G_ISO1 ${OPENV2G_DIR}/iso1/iso1EXIDatatypesDecoder.c)
+  zephyr_library_sources_ifdef(OPENV2G_ISO1 ${OPENV2G_DIR}/iso1/iso1EXIDatatypesEncoder.c)
+  zephyr_library_sources_ifdef(OPENV2G_ISO2 ${OPENV2G_DIR}/iso2/iso2EXIDatatypes.c)
+  zephyr_library_sources_ifdef(OPENV2G_ISO2 ${OPENV2G_DIR}/iso2/iso2EXIDatatypesDecoder.c)
+  zephyr_library_sources_ifdef(OPENV2G_ISO2 ${OPENV2G_DIR}/iso2/iso2EXIDatatypesEncoder.c)
+  zephyr_library_sources_ifdef(OPENV2G_TP ${OPENV2G_DIR}/transport/v2gtp.c)
+  zephyr_library_sources_ifdef(OPENV2G_XMLDSIG ${OPENV2G_DIR}/xmldsig/xmldsigEXIDatatypes.c)
+  zephyr_library_sources_ifdef(OPENV2G_XMLDSIG ${OPENV2G_DIR}/xmldsig/xmldsigEXIDatatypesDecoder.c)
+  zephyr_library_sources_ifdef(OPENV2G_XMLDSIG ${OPENV2G_DIR}/xmldsig/xmldsigEXIDatatypesEncoder.c)
+
+endif()
