@@ -32,10 +32,10 @@ config OPENV2G_TP
 	  Enable support for OpenV2G V2GTP
 
 config OPENV2G_XMLDSIG
-	bool "OpenV2G TP"
+	bool "OpenV2G XMLDSIG"
 	default y
 	help
-	  Enable support for OpenV2G XML-DSIG
+	  Enable support for OpenV2G XMLDSIG
 
 endif # OPENV2G
 
