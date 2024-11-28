@@ -4,7 +4,6 @@ if(CONFIG_OPENV2G)
   zephyr_interface_library_named(OPENV2G)
 
   zephyr_include_directories(
-    src
     src/appHandshake
     src/codec
     src/din
@@ -16,7 +15,6 @@ if(CONFIG_OPENV2G)
 
   zephyr_library()
   zephyr_library_sources(
-    src/projectExiConnector.c
     src/appHandshake/appHandEXIDatatypes.c
     src/appHandshake/appHandEXIDatatypesDecoder.c
     src/appHandshake/appHandEXIDatatypesEncoder.c
